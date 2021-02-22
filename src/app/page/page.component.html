@@ -1,0 +1,37 @@
+<div style="text-align: center;">
+    <h1>OMDb API <br><mark>The Open Movie Database</mark></h1>
+<input [(ngModel)]='SearchText' placeholder="Search by Title">&nbsp;
+<input type="button" value="Search" (click)="searchIdName()">
+</div>
+<p><a (click)='back()' *ngIf='su'>Go to back</a></p>
+<hr>
+<div *ngIf='!su'>
+    <div class="row">
+<div *ngFor="let allData1 of allData?.Search" class='box'    >
+
+<p><span><b>Title : </b></span>{{allData1?.Title}}</p>
+ <p><span><b>Year : </b></span>{{allData1?.Year}}</p>
+<p > <span><b>ImdbID : </b></span>{{allData1?.imdbID}}</p>
+<p> <span><b>Type : </b></span>{{allData1?.Type}}</p>
+<img src="{{allData1?.Poster}}">
+<button (click)='getMovie1(allData1)' >View details</button>&nbsp;
+<button (click)='getMovie2(allData1)' >Add to Favourite list </button>
+</div>
+</div>
+</div>
+
+<div *ngIf='su2'>
+  <p><span><b>Title : </b></span>{{pdata?.Title}}</p>
+  <p><span><b>Year : </b></span>{{pdata?.Year}}</p>
+  <p><span><b>Director : </b></span>{{pdata?.Director}}</p>
+  <p><span><b>imdbRating : </b></span>{{pdata?.imdbRating}}</p>
+  <p><span><b>Plot : </b></span>{{pdata?.Plot}}</p>
+  <img src="{{pdata?.Poster}}">
+</div>
+
+<div *ngIf='su1'>
+    <h2 style="text-align: center;">Favourite list</h2>
+    <ul *ngFor="let newA of newArray" >
+        <li>{{newA}}</li>
+    </ul>
+  </div>

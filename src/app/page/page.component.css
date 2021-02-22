@@ -1,0 +1,19 @@
+a{
+    text-decoration: underline;
+    color: blue;
+}
+.box{
+    box-sizing: border-box ;
+     border:solid 1px;
+     float: left;
+    width:320px;
+    height: 650px;
+   margin: 6px;
+   padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
